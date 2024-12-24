@@ -21,7 +21,7 @@ st.markdown(
 )
 
 # Load Data
-data = load_sampled_data("../Datasets/archive/2009.csv",sample_fraction=0.1)
+data = load_sampled_data("./Datasets/archive/2009.csv",sample_fraction=0.1)
 # Preprocessing
 # Replace missing values for better visualization
 data.fillna({"CANCELLATION_CODE": "None", "CARRIER_DELAY": 0, "WEATHER_DELAY": 0, "NAS_DELAY": 0, 
