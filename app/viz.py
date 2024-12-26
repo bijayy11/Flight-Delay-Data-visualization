@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import json
+import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="Flight Delay Visualization",
@@ -50,9 +51,17 @@ st.info(
     - Bar Chart of Number of Airports in Each State
     - Geo heatmaps of flight origins
     - Sunburst Chart of Flight Destinations by State and Airport
-    - Delay and cancellation statistics
-    - Distance vs. Delay Scatter Plot
-    - Distribution of flight delays by carrier and airports
+    - Bar Graph of Average Delays by Carrier
+    - Pie Chart of Flight Cancellations by Reason
+    - Bar Graph of Average Departure Delays by Airport
+    - Scatter Plot of Distance vs. Delay
+    - Bubble Map of Arrival Delays by Airport in the US
+    - Line plot of Monthly Delays and Cancellations (Average)
+    - Scatter Plot of Taxi Out vs Taxi In Times
+    - Bar Graph of Average Departure Delay by Time of Day
+    - Bar Graph of Cancellations Percentage by Carrier
+    - Horizontal Bar Graph of Airlines with the Most Delays
+    - Line plot of Trend of Average Arrival Delay Over Time
     """
 )
 
@@ -210,7 +219,7 @@ fig2 = px.bar(
     y=["CARRIER_DELAY", "WEATHER_DELAY", "NAS_DELAY", "SECURITY_DELAY", "LATE_AIRCRAFT_DELAY"],
     title="Average Delays by Carrier",
     labels={"value": "Average Delay (minutes)", "variable": "Delay Type"},
-    barmode="group",
+    barmode="stack",
     template="plotly_white"
 )
 st.plotly_chart(fig2)
@@ -233,7 +242,7 @@ st.plotly_chart(fig3)
 
 st.markdown("---")
 # Visualization 4: Delay Distribution by Airport
-st.subheader("Bar Chart")
+st.subheader("Bar Graph")
 delay_data = filtered_data.groupby("ORIGIN")["DEP_DELAY"].mean().reset_index()
 delay_data.columns = ["Airport", "Average Departure Delay"]
 
@@ -248,7 +257,6 @@ fig4 = px.bar(
 st.plotly_chart(fig4)
 
 st.markdown("---")
-# Visualization 5: Distance vs. Delay Scatter Plot
 st.subheader("Scatter Plot")
 fig5 = px.scatter(
     filtered_data,
@@ -263,7 +271,6 @@ fig5 = px.scatter(
 st.plotly_chart(fig5)
 
 st.markdown("---")
-#Visualization fig 6
 # Fill missing arrival delays with 0
 data['ARR_DELAY'] = data['ARR_DELAY'].fillna(0)
 
@@ -282,15 +289,15 @@ st.subheader("Bubble Map")
 # Create a bubble map using Plotly
 fig6 = px.scatter_geo(
     airport_delay_data,
-    lat='lat',  # Use 'lat' for the airport location
-    lon='lon',  # Use 'lon' for the airport location
-    size='ARR_DELAY',  # Size of bubbles based on arrival delay
-    hover_name='ORIGIN',  # Show airport IATA code on hover
-    size_max=10,  # Maximum bubble size
-    color='ARR_DELAY',  # Color based on arrival delay
-    color_continuous_scale='Viridis',  # Color scale
-    title='Bubble Map of Arrival Delays by Airport in the US',
-    template='plotly_white',  # Dark template for contrast
+    lat='lat', 
+    lon='lon', 
+    size='ARR_DELAY',
+    hover_name='ORIGIN', 
+    size_max=10,
+    color='ARR_DELAY',
+    color_continuous_scale='Viridis',
+    title='Arrival Delays by Airport in the US',
+    template='plotly_white',
 )
 
 # Update layout for better fit and appearance
@@ -309,4 +316,144 @@ fig6.update_layout(
 
 # Display the map
 st.plotly_chart(fig6)
+
 st.markdown("---")
+st.subheader("Line Plot")
+data['FL_DATE'] = pd.to_datetime(data['FL_DATE'])
+data['Month'] = data['FL_DATE'].dt.month
+delay_cancellation_by_month = data.groupby('Month')[['DEP_DELAY', 'ARR_DELAY', 'CANCELLED']].mean().reset_index()
+
+# Create a line plot with enhancements
+fig8 = go.Figure()
+
+# Add traces for DEP_DELAY, ARR_DELAY, and CANCELLED with customized markers and line styles
+fig8.add_trace(go.Scatter(
+    x=delay_cancellation_by_month['Month'],
+    y=delay_cancellation_by_month['DEP_DELAY'],
+    mode='lines+markers',
+    name='Departure Delay',
+    line=dict(color='royalblue', width=3),
+    marker=dict(size=8, color='royalblue', symbol='circle'),
+    hovertemplate='Month: %{x}<br>Departure Delay: %{y} minutes'
+))
+fig8.add_trace(go.Scatter(
+    x=delay_cancellation_by_month['Month'],
+    y=delay_cancellation_by_month['ARR_DELAY'],
+    mode='lines+markers',
+    name='Arrival Delay',
+    line=dict(color='orange', width=3),
+    marker=dict(size=8, color='orange', symbol='square'),
+    hovertemplate='Month: %{x}<br>Arrival Delay: %{y} minutes'
+))
+fig8.add_trace(go.Scatter(
+    x=delay_cancellation_by_month['Month'],
+    y=delay_cancellation_by_month['CANCELLED'],
+    mode='lines+markers',
+    name='Cancellations',
+    line=dict(color='red', width=3),
+    marker=dict(size=8, color='red', symbol='diamond'),
+    hovertemplate='Month: %{x}<br>Cancellations: %{y} (%)'
+))
+fig8.update_layout(
+    title="Monthly Delays and Cancellations (Average)",
+    xaxis_title="Month",
+    yaxis_title="Average Delay (minutes) / Cancellations (%)",
+    template="plotly_dark",  # Dark theme for better contrast
+    hovermode="x unified",   # Hover mode to show data for all traces at once
+    legend_title="Delay Types",
+    legend=dict(x=0.75, y=1),  # Position the legend
+    margin=dict(l=40, r=40, t=40, b=40)  # Adjust margins for better readability
+)
+st.plotly_chart(fig8)
+
+st.markdown("---")
+st.subheader("Scatter Plot")
+fig10 = px.scatter(
+    filtered_data,
+    x='TAXI_OUT',
+    y='TAXI_IN',
+    color='OP_CARRIER',
+    title="Taxi Out vs Taxi In Times",
+    labels={"TAXI_OUT": "Taxi Out Time (minutes)", "TAXI_IN": "Taxi In Time (minutes)"},
+    hover_data=['ORIGIN', 'DEST'],
+    template='plotly_white'
+)
+st.plotly_chart(fig10)
+
+st.markdown("---")
+st.subheader("Bar Graph")
+data['Hour'] = data['CRS_DEP_TIME'] // 100
+hour_delay_data = data.groupby('Hour')['DEP_DELAY'].mean().reset_index()
+
+fig11 = px.bar(
+    hour_delay_data,
+    x='Hour',
+    y='DEP_DELAY',
+    title="Average Departure Delay by Time of Day",
+    labels={"Hour": "Hour of Day", "DEP_DELAY": "Average Departure Delay (minutes)"},
+    template='plotly_dark'
+)
+st.plotly_chart(fig11)
+
+st.markdown("---")
+st.subheader("Bar Graph")
+cancellations_by_carrier = filtered_data.groupby('OP_CARRIER')['CANCELLED'].mean().reset_index()
+
+fig12 = px.bar(
+    cancellations_by_carrier,
+    x='OP_CARRIER',
+    y='CANCELLED',
+    title="Cancellations Percentage by Carrier",
+    labels={"CANCELLED": "Cancellation Rate", "OP_CARRIER": "Carrier"},
+    template='plotly_dark',
+    color="CANCELLED",
+    color_continuous_scale="Viridis"
+)
+fig12.update_traces(
+    hovertemplate="<b>Carrier:</b> %{x}<br><b>Cancellation Rate:</b> %{y:.2%}"  # Showing percentage
+)
+st.plotly_chart(fig12)
+
+st.markdown("---")
+st.subheader("Horizontal Bar Graph")
+top_delayed_flights = data.groupby("OP_CARRIER")["ARR_DELAY"].mean().reset_index()
+top_delayed_flights = top_delayed_flights.sort_values("ARR_DELAY").head(19)
+
+fig13 = px.bar(
+    top_delayed_flights,
+    x="ARR_DELAY",
+    y="OP_CARRIER",
+    title="Airlines with the Most Delays",
+    labels={"ARR_DELAY": "Arrival Delay (minutes)", "OP_CARRIER": "Airline"},
+    color="ARR_DELAY",
+    color_continuous_scale="Viridis",
+    orientation='h'
+)
+fig13.update_traces(
+    hovertemplate="<b>Airline:</b> %{y}<br><b>Delay:</b> %{x} minutes"
+)
+st.plotly_chart(fig13)
+
+st.markdown("---")
+st.subheader("Line Graph")
+data['FL_DATE'] = pd.to_datetime(data['FL_DATE'])
+delay_trend = data.groupby(data['FL_DATE'].dt.date)['ARR_DELAY'].mean().reset_index()
+
+# Create the line plot with interactive features
+fig14 = px.line(
+    delay_trend,
+    x='FL_DATE',
+    y='ARR_DELAY',
+    title="Trend of Average Arrival Delay Over Time",
+    labels={"FL_DATE": "Date", "ARR_DELAY": "Average Arrival Delay (minutes)"},
+    template="plotly_dark"  # Optional: change theme to dark
+)
+fig14.update_layout(
+    xaxis_rangeslider_visible=True,
+    xaxis=dict(
+        rangeslider=dict(visible=True),
+        range=[delay_trend['FL_DATE'].min(), delay_trend['FL_DATE'].max()]
+    )
+)
+fig14.update_traces(mode='lines+markers', hovertemplate='Date: %{x}<br>Avg Delay: %{y:.2f} mins')
+st.plotly_chart(fig14)
