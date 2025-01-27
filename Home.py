@@ -51,30 +51,10 @@ destination_state_data = load_yearly_data(selected_year, "destination_state_data
 taxi_data = load_yearly_data(selected_year, "taxi_times.csv")
 
 # Update title to reflect selected year
-st.title(f"✈️ Flight Delay & Cancellation Analysis Dashboard ({selected_year})")
+st.header(f"✈️ Flight Delay & Cancellation Analysis Dashboard ({selected_year})")
 
 # Load GeoJSON for US states
 us_states_geojson = load_geojson("datasets/us_states_geojson.json")
-
-st.info(
-    """
-    This dashboard provides insights into flight cancellation and delay data. Visualizations include:
-    - Bar Chart of Number of Airports in Each State
-    - Geo heatmaps of flight origins
-    - Sunburst Chart of Flight Destinations by State and Airport
-    - Bar Graph of Average Delays by Carrier
-    - Pie Chart of Flight Cancellations by Reason
-    - Bar Graph of Average Departure Delays by Airport
-    - Scatter Plot of Distance vs. Delay
-    - Bubble Map of Arrival Delays by Airport in the US
-    - Line plot of Monthly Delays and Cancellations (Average)
-    - Scatter Plot of Taxi Out vs Taxi In Times
-    - Bar Graph of Average Departure Delay by Time of Day
-    - Bar Graph of Cancellations Percentage by Carrier
-    - Horizontal Bar Graph of Airlines with the Most Delays
-    - Line plot of Trend of Average Arrival Delay Over Time
-    """
-)
 
 # Sidebar filters
 st.sidebar.header("Filters")
@@ -96,6 +76,9 @@ filtered_origin_data = origin_state_data[origin_state_data["State"].isin(origin_
 
 # Visualization 1: Bar Chart of Number of Airports in Each State
 st.subheader("Bar Chart of Number of Airports in Each State")
+st.info(
+    "The chart illustrates the number of airports per state, with states on the x-axis and airport counts on the y-axis. It uses a Viridis gradient, where lighter colors represent states with higher no of airports, effectively highlighting regional airport distribution."
+)
 fig0 = px.bar(
     state_airport_count,
     x="STATE",
@@ -109,7 +92,9 @@ st.plotly_chart(fig0)
 
 # Visualization 2: Geo Heatmap of Flight Origins by State
 st.subheader("Geo Heatmap")
-# Create geo heatmap visualization using Plotly
+st.info(
+    "The chart displays a geo heatmap of flight origins by state in the United States, where states are color-coded based on total flight counts. Lighter colors indicate higher flight activity, offering a clear visualization of regional flight origins and their concentration across the country."
+)
 fig1 = px.choropleth(
     origin_state_data,
     locations="State",
@@ -146,8 +131,11 @@ st.plotly_chart(fig1)
 
 st.markdown("---")
 
-# Visualization 3: Sunburst Chart of Flight Destinations by State and Airport
+# Visualization 3: Sunburst Chart of Flight Origin and Destinations by State and Airport
 st.subheader("Sunburst Chart of Flight Counts by State and Airport")
+st.info(
+    "The chart visualizes the breakdown of flight origins by state and airport, with a hierarchical structure. The first level shows the origin state, and the second level details individual airports. The size of each section represents flight count, and the color gradient indicates flight intensity, with lighter sections signifying higher activity. This chart provides a detailed view of flight distribution, highlighting key hubs and regions with significant flight traffic."
+)
 cleaned_sunbrust = origin_dest_counts.dropna(subset=["ORIGIN_STATE", "ORIGIN","DEST_STATE","DEST"])
 
 fig_origin = px.sunburst(
@@ -160,6 +148,9 @@ fig_origin = px.sunburst(
 )
 st.plotly_chart(fig_origin)
 
+st.info(
+    "The chart for flight destinations shows a hierarchical breakdown of flights by destination state and airport. The first level represents the destination state, while the second level breaks it down by individual airports. The size of each segment corresponds to the number of flights, with a color gradient indicating flight count intensity—lighter sections represent higher volumes. This visualization offers an in-depth look at the distribution of flights, highlighting major destinations and the scale of travel to each location."
+)
 # Sunburst Chart for Destinations
 fig_dest = px.sunburst(
     cleaned_sunbrust,
@@ -173,6 +164,9 @@ st.plotly_chart(fig_dest)
 
 # Visualization 4: Bar Graph of Average Delays by Carrier
 st.subheader("Bar Graph of Average Delays by Carrier")
+st.info(
+    "The graph presents a stacked comparison of delay types (Carrier, Weather, NAS, Security, and Late Aircraft delays) for different airlines. Each bar represents an airline, with segments showing the average delay time for each category. This chart allows for a clear comparison of the contributions of each delay type to the total delay time for each carrier."
+)
 fig3 = px.bar(
     filtered_carrier_delays,
     x="OP_CARRIER",
@@ -185,6 +179,9 @@ st.plotly_chart(fig3)
 
 # Visualization 5: Pie Chart of Flight Cancellations by Reason
 st.subheader("Pie Chart of Flight Cancellations by Reason")
+st.info(
+    "The chart visualizes the distribution of flight cancellations by cause. Each slice of the pie represents a different reason for cancellations, with the slice size corresponding to the number of cancellations. The reasons are: A for Air Carrier issues, B for Weather conditions, C for National Air System delays, and D for Security concerns."
+)
 fig4 = px.pie(
     cancellation_reasons,
     names="Reason",
@@ -197,6 +194,9 @@ st.plotly_chart(fig4)
 
 # Visualization 6: Bar Graph of Average Departure Delays by Airport
 st.subheader("Bar Graph of Average Departure Delays by Airport")
+st.info(
+    "The graph visualizes the average delay times for departures from different airports. Each bar represents an airport, with the height indicating the average delay in minutes. This chart helps identify airports with longer delays, offering insights into operational challenges or areas for improvement."
+)
 fig5 = px.bar(
     airport_delays,
     x="ORIGIN",
@@ -208,6 +208,9 @@ st.plotly_chart(fig5)
 
 # Visualization 7: Scatter Plot of Distance vs. Delay
 st.subheader("Scatter Plot of Distance vs. Delay")
+st.info(
+    "The plot illustrates the relationship between flight distance and arrival delay. Each point represents a flight, with the horizontal axis showing distance in miles and the vertical axis showing arrival delay in minutes. Points are color-coded by carrier, allowing users to distinguish delays by different airlines. This visualization helps identify trends, such as whether longer flights have more significant delays or if specific carriers experience longer delays over certain distances."
+)
 fig6 = px.scatter(
     distance_vs_delay,
     x="DISTANCE",
@@ -223,6 +226,9 @@ airport_bubble_map["Average Arrival Delay"] = airport_bubble_map["Average Arriva
 
 # Visualization 8: Bubble Map of Arrival Delays by Airport in the US
 st.subheader("Bubble Map of Arrival Delays by Airport in the US")
+st.info(
+    "The map shows the distribution of average arrival delays across airports in the US. Each airport is represented by a bubble, with the bubble size proportional to the average arrival delay, and the color indicating the delay magnitude. This visualization highlights regional patterns in delays, making it easy to identify airports with higher or lower average arrival delays."
+)
 fig7 = px.scatter_geo(
     airport_bubble_map,
     lat="LATITUDE",
@@ -256,9 +262,10 @@ fig7.update_layout(
 st.plotly_chart(fig7)
 
 # Visualization 9: Monthly Delays and Cancellations
-# Visualization 9: Monthly Delays and Cancellations
 st.subheader("Monthly Delays and Cancellations")
-
+st.info(
+    "The chart presents a line graph tracking the average delays for departures and arrivals, along with flight cancellations, for each month. It features three lines: red for departure delays, blue for arrival delays, and green for cancellations. This chart offers insights into monthly trends, helping identify patterns in delays and cancellations."
+)
 # Create the figure
 fig8 = go.Figure()
 
@@ -312,6 +319,9 @@ st.plotly_chart(fig8)
 
 # Visualization 10: Scatter Plot of Taxi Out vs Taxi In Times
 st.subheader("Scatter Plot of Taxi Out vs Taxi In Times")
+st.info(
+    "The plot visualizes the relationship between taxi-out time (time taken for the aircraft to leave the gate) and taxi-in time (time taken to return to the gate after landing). Each data point represents a flight, with taxi-out time on the x-axis and taxi-in time on the y-axis. Points are color-coded by carrier. This chart helps identify any correlation between the two variables, such as whether longer taxi-out times are associated with longer taxi-in times."
+)
 fig9 = px.scatter(
     taxi_data,
     x="TAXI_OUT",
@@ -324,6 +334,9 @@ st.plotly_chart(fig9)
 
 # Visualization 11: Bar Graph of Average Departure Delay by Time of Day
 st.subheader("Bar Graph of Average Departure Delay by Time of Day")
+st.info(
+    "The graph shows the relationship between the hour of the day and the average departure delay. The x-axis represents different hours, and the y-axis displays the average departure delay in minutes. Each bar indicates the average delay for flights departing at a specific hour. This chart helps identify trends, such as whether delays are more frequent during certain times of the day, offering valuable insights for analyzing peak delay times."
+)
 fig10 = px.bar(
     departure_delay_by_hour,
     x="Hour",
@@ -335,6 +348,9 @@ st.plotly_chart(fig10)
 
 # Visualization 12: Bar Graph of Cancellations Percentage by Carrier
 st.subheader("Bar Graph of Cancellations Percentage by Carrier")
+st.info(
+    "The graph shows the percentage of cancellations for each airline carrier. The x-axis represents different carriers, and the y-axis displays the cancellation rate as a percentage. Each bar is color-coded according to the cancellation rate, with the color scale indicating the magnitude. This visualization enables easy comparison of cancellation rates across carriers, highlighting those with higher or lower cancellation percentages and providing insights for identifying patterns and potential areas of improvement in the airline industry."
+)
 fig11 = px.bar(
     cancellation_percentage_by_carrier,
     x="OP_CARRIER",
@@ -348,6 +364,9 @@ st.plotly_chart(fig11)
 
 # Visualization 13: Horizontal Bar Graph of Airlines with the Most Delays
 st.subheader("Horizontal Bar Graph of Airlines with the Most Delays")
+st.info(
+    "The graph shows the airlines with the highest arrival delays. The x-axis represents arrival delay in minutes, while the y-axis lists the airlines. Each bar represents an airline, with the length corresponding to the average arrival delay. Bars are color-coded based on delay duration, with the color scale indicating the severity of delays. This visualization makes it easy to identify which airlines experience the most delays, offering insights into performance and potential areas for improvement."
+)
 fig12 = px.bar(
     airlines_most_delays,
     x="ARR_DELAY",
@@ -362,6 +381,9 @@ st.plotly_chart(fig12)
 
 # Visualization 14: Line Plot of Trend of Average Arrival Delay Over Time
 st.subheader("Line Plot of Trend of Average Arrival Delay Over Time")
+st.info(
+    "The plot visualizes how the average arrival delay has changed over time. The x-axis represents flight dates, and the y-axis shows the average arrival delay in minutes. Each data point corresponds to the average delay for a specific day, with lines connecting the points to highlight the trend. A range slider at the bottom lets users zoom into specific time frames, such as the past month, six months, or year. This chart helps identify trends in delays and track the impact of interventions or seasonal variations."
+)
 
 daily_delay_trend['FL_DATE'] = pd.to_datetime(daily_delay_trend['FL_DATE'])
 
@@ -389,5 +411,3 @@ fig13.update_layout(
 )
 fig13.update_traces(mode='lines+markers', hovertemplate='Date: %{x}<br>Avg Delay: %{y:.2f} mins')
 st.plotly_chart(fig13)
-st.write("---")
-st.markdown("Dashboard built using pre-aggregated datasets for faster loading and interactive exploration.")
