@@ -1,0 +1,342 @@
+,IATA,AIRPORT,STATE,State
+0,ABQ,Albuquerque International,NM,New Mexico
+1,ANC,Ted Stevens Anchorage International,AK,Alaska
+2,ATL,William B Hartsfield-Atlanta Intl,GA,Georgia
+3,AUS,Austin-Bergstrom International,TX,Texas
+4,BDL,Bradley International,CT,Connecticut
+5,BHM,Birmingham International,AL,Alabama
+6,BNA,Nashville International,TN,Tennessee
+7,BOS,Gen Edw L Logan Intl,MA,Massachusetts
+8,BUF,Buffalo Niagara Intl,NY,New York
+9,BUR,Burbank-Glendale-Pasadena,CA,California
+10,BWI,Baltimore-Washington International,MD,Maryland
+11,CHS,Charleston AFB International,SC,South Carolina
+12,CLE,Cleveland-Hopkins Intl,OH,Ohio
+13,CLT,Charlotte Douglas International,NC,North Carolina
+14,CMH,Port Columbus Intl,OH,Ohio
+15,CVG,Cincinnati Northern Kentucky Intl,KY,Kentucky
+16,DAL,Dallas Love ,TX,Texas
+17,DCA,Ronald Reagan Washington National,VA,Virginia
+18,DEN,Denver Intl,CO,Colorado
+19,DFW,Dallas-Fort Worth International,TX,Texas
+20,DTW,Detroit Metropolitan-Wayne County,MI,Michigan
+21,ELP,El Paso International,TX,Texas
+22,EWR,Newark Intl,NJ,New Jersey
+23,FLL,Fort Lauderdale-Hollywood Int'l,FL,Florida
+24,HNL,Honolulu International,HI,Hawaii
+25,HOU,William P X,TX,Texas
+26,IAD,Washington Dulles International,VA,Virginia
+27,IAH,George Bush Intercontinental,TX,Texas
+28,IND,Indianapolis International,IN,Indiana
+29,JAX,Jacksonville International,FL,Florida
+30,JFK,John F Kennedy Intl,NY,New York
+31,LAS,McCarran International,NV,Nevada
+32,LAX,Los Angeles International,CA,California
+33,LGA,LaGuardia,NY,New York
+34,LIT,Adams ,AR,Arkansas
+35,MCI,Kansas City International,MO,Missouri
+36,MCO,Orlando International,FL,Florida
+37,MDW,Chicago Midway,IL,Illinois
+38,MEM,Memphis International,TN,Tennessee
+39,MIA,Miami International,FL,Florida
+40,MKE,General Mitchell International,WI,Wisconsin
+41,MSP,Minneapolis-St Paul Intl,MN,Minnesota
+42,MSY,New Orleans International ,LA,Louisiana
+43,OAK,Metropolitan Oakland International,CA,California
+44,OGG,Kahului,HI,Hawaii
+45,OKC,Will Rogers World,OK,Oklahoma
+46,OMA,Eppley Airfield,NE,Nebraska
+47,ONT,Ontario International,CA,California
+48,ORD,Chicago O'Hare International,IL,Illinois
+49,ORF,Norfolk International,VA,Virginia
+50,PBI,Palm Beach International,FL,Florida
+51,PDX,Portland Intl,OR,Oregon
+52,PHL,Philadelphia Intl,PA,Pennsylvania
+53,PHX,Phoenix Sky Harbor International,AZ,Arizona
+54,PIT,Pittsburgh International,PA,Pennsylvania
+55,PVD,Theodore F Green State,RI,Rhode Island
+56,RDU,Raleigh-Durham International,NC,North Carolina
+57,RIC,Richmond International,VA,Virginia
+58,RNO,Reno Tahoe International,NV,Nevada
+59,RSW,Southwest Florida International,FL,Florida
+60,SAN,San Diego International-Lindbergh ,CA,California
+61,SAT,San Antonio International,TX,Texas
+62,SDF,Louisville International-Standiford ,KY,Kentucky
+63,SEA,Seattle-Tacoma Intl,WA,Washington
+64,SFO,San Francisco International,CA,California
+65,SJC,San Jose International,CA,California
+66,SJU,Luis Munoz Marin International,PR,Puerto Rico
+67,SLC,Salt Lake City Intl,UT,Utah
+68,SMF,Sacramento International,CA,California
+69,SNA,John Wayne  Orange Co,CA,California
+70,STL,Lambert-St Louis International,MO,Missouri
+71,TPA,Tampa International ,FL,Florida
+72,TUL,Tulsa International,OK,Oklahoma
+73,TUS,Tucson International,AZ,Arizona
+74,ABE,Lehigh Valley International,PA,Pennsylvania
+75,ABI,Abilene Regional,TX,Texas
+76,ABR,Aberdeen Regional,SD,South Dakota
+77,ABY,Southwest Georgia Regional,GA,Georgia
+78,ACK,Nantucket Memorial,MA,Massachusetts
+79,ACT,Waco Regional,TX,Texas
+80,ACV,Arcata,CA,California
+81,ACY,Atlantic City International,NJ,New Jersey
+82,ADK,Adak,AK,Alaska
+83,ADQ,Kodiak ,AK,Alaska
+84,AEX,Alexandria International,LA,Louisiana
+85,AGS,Bush ,GA,Georgia
+86,AKN,King Salmon,AK,Alaska
+87,ALB,Albany Cty,NY,New York
+88,ALO,Waterloo Municipal,IA,Iowa
+89,AMA,Amarillo International,TX,Texas
+90,APN,Alpena County Regional ,MI,Michigan
+91,ART,Watertown Intl,NY,New York
+92,ASE,Aspen-Pitkin Co Sardy ,CO,Colorado
+93,ATW,Outagamie County Regional,WI,Wisconsin
+94,AVL,Asheville Regional,NC,North Carolina
+95,AVP,Wilkes-Barre Scranton Intl,PA,Pennsylvania
+96,AZO,Kalamazoo County,MI,Michigan
+97,BET,Bethel,AK,Alaska
+98,BFL,Meadows ,CA,California
+99,BGM,Binghamton Regional,NY,New York
+100,BGR,Bangor International,ME,Maine
+101,BIL,Billings Logan Intl,MT,Montana
+102,BIS,Bismarck Municipal,ND,North Dakota
+103,BJI,Bemidji-Beltrami County,MN,Minnesota
+104,BLI,Bellingham Intl,WA,Washington
+105,BMI,Central Illinois Regional,IL,Illinois
+106,BOI,Boise Air Terminal,ID,Idaho
+107,BPT,Southeast Texas Regional,TX,Texas
+108,BQK,Glynco Jetport,GA,Georgia
+109,BQN,Rafael Hernandez,PR,Puerto Rico
+110,BRD,Brainerd-Crow Wing County Regional,MN,Minnesota
+111,BRO,Brownsville S.Padre Island International,TX,Texas
+112,BRW,Wiley Post Will Rogers Memorial,AK,Alaska
+113,BTM,Bert Mooney,MT,Montana
+114,BTR,Baton Rouge Metropolitan,LA,Louisiana
+115,BTV,Burlington International,VT,Vermont
+116,BZN,Gallatin ,MT,Montana
+117,CAE,Columbia Metropolitan,SC,South Carolina
+118,CAK,Akron-Canton Regional,OH,Ohio
+119,CDC,Cedar City Muni,UT,Utah
+120,CDV,Merle K (Mudhole) Smith,AK,Alaska
+121,CEC,Jack McNamara ,CA,California
+122,CHA,Lovell ,TN,Tennessee
+123,CHO,Charlottesville-Albermarle,VA,Virginia
+124,CIC,Chico Municipal,CA,California
+125,CID,Eastern Iowa ,IA,Iowa
+126,CIU,Chippewa County International,MI,Michigan
+127,CLD,MC Clellan-Palomar Airport,,
+128,CLL,Easterwood ,TX,Texas
+129,CMI,University of Illinois-Willard,IL,Illinois
+130,CMX,Houghton County Memorial,MI,Michigan
+131,CNY,Canyonlands ,UT,Utah
+132,COD,Yellowstone Regional,WY,Wyoming
+133,COS,City of Colorado Springs Muni,CO,Colorado
+134,COU,Columbia Regional,MO,Missouri
+135,CPR,Natrona County Intl,WY,Wyoming
+136,CRP,Corpus Christi International,TX,Texas
+137,CRW,Yeager,WV,West Virginia
+138,CSG,Columbus Metropolitan,GA,Georgia
+139,CWA,Central Wisconsin,WI,Wisconsin
+140,CYS,Cheyenne,WY,Wyoming
+141,DAB,Daytona Beach International,FL,Florida
+142,DAY,James M Cox Dayton Intl,OH,Ohio
+143,DBQ,Dubuque Municipal,IA,Iowa
+144,DHN,Dothan ,AL,Alabama
+145,DIK,Dickinson Municipal,ND,North Dakota
+146,DLG,Dillingham,AK,Alaska
+147,DLH,Duluth International,MN,Minnesota
+148,DRO,Durango-La Plata County,CO,Colorado
+149,DRT,Del Rio International,TX,Texas
+150,DSM,Des Moines International,IA,Iowa
+151,DVL,Devils Lake Municipal-Knoke ,ND,North Dakota
+152,EAU,Chippewa Valley Regional,WI,Wisconsin
+153,EGE,Eagle County Regional,CO,Colorado
+154,EKO,Elko Regional,NV,Nevada
+155,ELM,Elmira Corning Regional,NY,New York
+156,ERI,Erie Intl,PA,Pennsylvania
+157,ESC,Delta County,MI,Michigan
+158,EUG,Mahlon Sweet ,OR,Oregon
+159,EVV,Evansville Regional,IN,Indiana
+160,EWN,Craven County Regional,NC,North Carolina
+161,EYW,Key West International,FL,Florida
+162,FAI,Fairbanks International,AK,Alaska
+163,FAR,Hector International,ND,North Dakota
+164,FAT,Fresno Yosemite International,CA,California
+165,FAY,Fayetteville Municipal,NC,North Carolina
+166,FCA,Glacier Park Intl,MT,Montana
+167,FLG,Flagstaff Pulliam,AZ,Arizona
+168,FLO,Florence Regional,SC,South Carolina
+169,FNT,Bishop,MI,Michigan
+170,FOE,Forbes ,KS,Kansas
+171,FSD,Joe Foss ,SD,South Dakota
+172,FSM,Fort Smith Regional,AR,Arkansas
+173,FWA,Fort Wayne International,IN,Indiana
+174,GCC,Gillette-Campbell County,WY,Wyoming
+175,GCK,Garden City Regional,KS,Kansas
+176,GEG,Spokane Intl,WA,Washington
+177,GFK,Grand Forks International,ND,North Dakota
+178,GGG,Gregg County,TX,Texas
+179,GJT,Walker ,CO,Colorado
+180,GNV,Gainesville Regional,FL,Florida
+181,GPT,Gulfport-Biloxi Regional,MS,Mississippi
+182,GRB,Austin Straubel International,WI,Wisconsin
+183,GRI,Central Nebraska Regional ,NE,Nebraska
+184,GRK,Robert Gray AAF,TX,Texas
+185,GRR,Kent County International,MI,Michigan
+186,GSO,Piedmont Triad International,NC,North Carolina
+187,GSP,Greenville-Spartanburg,SC,South Carolina
+188,GST,Gustavus,AK,Alaska
+189,GTF,Great Falls Intl,MT,Montana
+190,GTR,Golden Triangle Regional,MS,Mississippi
+191,GUC,Gunnison County,CO,Colorado
+192,GUM,Guam International,GU,Guam
+193,HDN,Yampa Valley,CO,Colorado
+194,HIB,Chisholm-Hibbing,MN,Minnesota
+195,HLN,Helena Regional,MT,Montana
+196,HOB,Lea County Regional,NM,New Mexico
+197,HPN,Westchester Cty,NY,New York
+198,HRL,Valley International,TX,Texas
+199,HSV,Huntsville International ,AL,Alabama
+200,HTS,Tri-State Walker-Long ,WV,West Virginia
+201,HYA,Barnstable Mun Boardman Polando ,MA,Massachusetts
+202,HYS,Hays Municipal,KS,Kansas
+203,ICT,Wichita Mid-Continent,KS,Kansas
+204,IDA,Idaho Falls Regional,ID,Idaho
+205,ILG,New Castle County ,DE,Delaware
+206,ILM,Wilmington International,NC,North Carolina
+207,IMT,Ford,MI,Michigan
+208,INL,Falls International,MN,Minnesota
+209,IPL,Imperial County,CA,California
+210,ISN,Sloulin Field International,ND,North Dakota
+211,ISP,Long Island - MacArthur,NY,New York
+212,ITH,Tompkins Cty ,NY,New York
+213,ITO,Hilo International,HI,Hawaii
+214,IYK,Inyokern,CA,California
+215,JAC,Jackson Hole,WY,Wyoming
+216,JAN,Jackson International,MS,Mississippi
+217,JLN,Joplin Regional,MO,Missouri
+218,JMS,Jamestown Municipal,ND,North Dakota
+219,JNU,Juneau International,AK,Alaska
+220,KOA,Kona International At Keahole,HI,Hawaii
+221,KTN,Ketchikan International,AK,Alaska
+222,LAN,Capital City,MI,Michigan
+223,LAR,Laramie Regional,WY,Wyoming
+224,LAW,Lawton-Ft Sill Regional,OK,Oklahoma
+225,LBB,Lubbock International,TX,Texas
+226,LCH,Lake Charles Regional,LA,Louisiana
+227,LEX,Blue Grass ,KY,Kentucky
+228,LFT,Lafayette Regional,LA,Louisiana
+229,LGB,Long Beach (Daugherty ),CA,California
+230,LIH,Lihue,HI,Hawaii
+231,LMT,Klamath Falls International,OR,Oregon
+232,LNK,Lincoln Municipal,NE,Nebraska
+233,LRD,Laredo International,TX,Texas
+234,LSE,La Crosse Municipal,WI,Wisconsin
+235,LWB,Greenbrier Valley,WV,West Virginia
+236,LWS,Lewiston-Nez Perce County,ID,Idaho
+237,LYH,Lynchburg Municipal-Preston Glenn ,VA,Virginia
+238,MAF,Midland International,TX,Texas
+239,MBS,Mbs International,MI,Michigan
+240,MCN,Middle Georgia Regional,GA,Georgia
+241,MDT,Harrisburg Intl,PA,Pennsylvania
+242,MEI,Key ,MS,Mississippi
+243,MFE,McAllen Miller International,TX,Texas
+244,MFR,Rogue Valley International,OR,Oregon
+245,MGM,Montgomery Regional Apt,AL,Alabama
+246,MHK,Manhattan Regional,KS,Kansas
+247,MHT,Manchester,NH,New Hampshire
+248,MKG,Muskegon County,MI,Michigan
+249,MLB,Melbourne International ,FL,Florida
+250,MLI,Quad City,IL,Illinois
+251,MLU,Monroe Regional,LA,Louisiana
+252,MMH,Mammoth Yosemite,CA,California
+253,MOB,Mobile Regional,AL,Alabama
+254,MOD,Modesto City-County-Harry Sham ,CA,California
+255,MOT,Minot International,ND,North Dakota
+256,MQT,Marquette County Airport,,
+257,MRY,Monterey Peninsula,CA,California
+258,MSN,Dane County Regional,WI,Wisconsin
+259,MSO,Missoula International,MT,Montana
+260,MTJ,Montrose Regional,CO,Colorado
+261,MVY,Marthas Vineyard,MA,Massachusetts
+262,MWH,Grant County,WA,Washington
+263,MYR,Myrtle Beach International,SC,South Carolina
+264,OAJ,Albert J Ellis,NC,North Carolina
+265,OME,Nome,AK,Alaska
+266,ORH,Worcester Regional,MA,Massachusetts
+267,OTH,North Bend Muni,OR,Oregon
+268,OTZ,Ralph Wien Memorial,AK,Alaska
+269,OXR,Oxnard,CA,California
+270,PAH,Barkley Regional,KY,Kentucky
+271,PFN,Panama City-Bay County International,FL,Florida
+272,PHF,Newport News Williamsburg International,VA,Virginia
+273,PIA,Greater Peoria Regional,IL,Illinois
+274,PIB,Hattiesburg-Laurel Regional,MS,Mississippi
+275,PIE,St. Petersburg-Clearwater International,FL,Florida
+276,PIH,Pocatello Regional,ID,Idaho
+277,PIR,Pierre Regional,SD,South Dakota
+278,PLN,Pellston Regional  of Emmet County,MI,Michigan
+279,PNS,Pensacola Regional,FL,Florida
+280,PPG,Pago Pago International,AS,
+281,PSC,Tri-Cities,WA,Washington
+282,PSE,Mercedita,PR,Puerto Rico
+283,PSG,James C. Johnson Petersburg,AK,Alaska
+284,PSP,Palm Springs International,CA,California
+285,PUB,Pueblo Memorial,CO,Colorado
+286,PWM,Portland International Jetport,ME,Maine
+287,RAP,Rapid City Regional,SD,South Dakota
+288,RDD,Redding Municipal,CA,California
+289,RDM,Roberts ,OR,Oregon
+290,RFD,Greater Rockford,IL,Illinois
+291,RHI,Rhinelander-Oneida County,WI,Wisconsin
+292,RKS,Rock Springs-Sweetwater County,WY,Wyoming
+293,ROA,Roanoke Regional  Woodrum ,VA,Virginia
+294,ROC,Greater Rochester Int'l,NY,New York
+295,ROW,Roswell Industrial Air Center,NM,New Mexico
+296,RST,Rochester International,MN,Minnesota
+297,SAF,Santa Fe Municipal,NM,New Mexico
+298,SAV,Savannah International,GA,Georgia
+299,SBA,Santa Barbara Municipal,CA,California
+300,SBN,South Bend Regional,IN,Indiana
+301,SBP,San Luis Obispo Co-McChesney ,CA,California
+302,SCC,Deadhorse,AK,Alaska
+303,SCE,University Park,,
+304,SGF,Springfield-Branson Regional,MO,Missouri
+305,SGU,St George Muni,UT,Utah
+306,SHD,Shenandoah Valley Regional,VA,Virginia
+307,SHV,Shreveport Regional,LA,Louisiana
+308,SIT,Sitka,AK,Alaska
+309,SJT,San Angelo Regional  Mathis ,TX,Texas
+310,SMX,Santa Maria Pub Capt G Allan Hancock ,CA,California
+311,SPI,Capital,IL,Illinois
+312,SPN,Tinian International Airport,,
+313,SPS,Sheppard AFB Wichita Falls Municipal,TX,Texas
+314,SRQ,Sarasota Bradenton International,FL,Florida
+315,STC,St Cloud Regional,MN,Minnesota
+316,STT,Cyril E. King,VI,Virgin Islands
+317,STX,Henry E. Rohlsen ,VI,Virgin Islands
+318,SUN,Friedman Memorial,ID,Idaho
+319,SUX,Sioux Gateway ,IA,Iowa
+320,SWF,Stewart,NY,New York
+321,SYR,Syracuse-Hancock Intl,NY,New York
+322,TEX,Telluride Regional,CO,Colorado
+323,TLH,Tallahassee Regional,FL,Florida
+324,TOL,Toledo Express,OH,Ohio
+325,TRI,Tri-Cities Regional,TN,Tennessee
+326,TTN,Trenton-Mercer County ,NJ,New Jersey
+327,TUP,Tupelo Municipal ,MS,Mississippi
+328,TVC,Cherry Capital,MI,Michigan
+329,TWF,Joslin Field - Magic Valley,ID,Idaho
+330,TXK,Texarkana Regional-Webb ,AR,Arkansas
+331,TYR,Tyler Pounds ,TX,Texas
+332,TYS,McGhee-Tyson,TN,Tennessee
+333,VEL,Vernal,UT,Utah
+334,VLD,Valdosta Regional,GA,Georgia
+335,VPS,Eglin Air Force Base,FL,Florida
+336,WRG,Wrangell,AK,Alaska
+337,WYS,Yellowstone,MT,Montana
+338,XNA,Northwest Arkansas Regional,AR,Arkansas
+339,YAK,Yakutat,AK,Alaska
+340,YUM,Yuma MCAS-Yuma International,AZ,Arizona

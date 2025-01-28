@@ -272,7 +272,7 @@ elif metric_selection == "Average Taxi Time (Hourly)":
     st.plotly_chart(fig, use_container_width=True)
 
 elif metric_selection == "Flight Count by State":
-    st.subheader("🌍 Year-over-Year Flight Count Change by State (Button Navigation)")
+    st.subheader("🌍 Year-over-Year Flight Count Change by State ")
 
     # Group the data by year and state, and sum the flight counts
     yearly_data = data.groupby(['Year', 'ORIGIN_STATE'])['Flight Count'].sum().reset_index()
