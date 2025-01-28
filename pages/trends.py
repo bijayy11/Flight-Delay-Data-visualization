@@ -5,13 +5,13 @@ import plotly.graph_objects as go
 
 # Set page configuration
 st.set_page_config(
-    page_title="Flight Metrics Time Series Analysis",
+    page_title="Flight Metrics Trend Analysis",
     page_icon="✈️",
     layout="wide"
 )
 
 # Title and Description
-st.title("✈️ Flight Metrics Time Series Analysis")
+st.title("✈️ Flight Metrics Trend Analysis")
 st.markdown("""
 Explore trends in flight metrics from 2009 to 2018 with interactive visualizations.  
 Select a metric below to dive deeper into the data!
@@ -42,10 +42,31 @@ def load_data(metric_file, years=range(2009, 2019)):
 
 # Load data for the selected metric
 data = load_data(metrics[metric_selection])
+if metric_selection == "Average Departure Delay (by Origin)":
+    st.info("This visualization shows the average departure delays for flights across different airports from 2009 to 2018. You can explore how delays have changed over the years and which airports had the highest delays.")
+    # [Code for this visualization]
 
+elif metric_selection == "Carrier Delays by Type":
+    st.info("This chart breaks down delays caused by airlines into categories like weather, security, and late aircraft. It helps you understand what caused the most delays over time.")
+    # [Code for this visualization]
+
+elif metric_selection == "Average Departure Delay (by Hour)":
+    st.info("This line chart shows how average flight delays vary by the hour of the day. It helps identify the busiest or most delay-prone times during the day from 2009 to 2018.")
+    # [Code for this visualization]
+
+elif metric_selection == "Average Taxi Time (Hourly)":
+    st.info("This visualization highlights the average time spent taxiing (before takeoff or after landing) at different hours of the day. It shows trends over time and reveals patterns in airport operations.")
+    # [Code for this visualization]
+
+elif metric_selection == "Flight Count by State":
+    st.info("This map shows the changes in the number of flights for each U.S. state over different years. You can explore if a state's flight activity increased, decreased, or stayed the same.")
+    # [Code for this visualization]
+
+elif metric_selection == "Top Flight Routes by Count":
+    st.info("This treemap visualizes the top 10 most popular flight routes based on the number of flights. It gives a quick overview of the busiest routes in the U.S. from 2009 to 2018.")
 # Create visualizations
 if metric_selection == "Average Departure Delay (by Origin)":
-    st.subheader("🌟 Average Departure Delay by Origin (Interactive & Intuitive)")
+    st.subheader(" Average Departure Delay by Origin")
 
     # Aggregate data into a pivot table
     delay_pivot = data.pivot_table(
@@ -356,5 +377,29 @@ elif metric_selection == "Top Flight Routes by Count":
 
 
 # Footer
+if metric_selection == "Average Departure Delay (by Origin)":
+
+    st.info(" ****How to read this chart:** The x-axis represents the airports (origins), and the y-axis represents the average departure delay (in minutes). Higher bars indicate airports with more delays on average.")
+
+elif metric_selection == "Carrier Delays by Type":
+
+    st.info(" ****How to read this chart:** Each section of the bar represents a specific type of delay. The x-axis represents the years, and the y-axis represents the total number of delays. Hover over the sections to see exact values.")
+
+elif metric_selection == "Average Departure Delay (by Hour)":
+
+    st.info(" ****How to read this chart:** The x-axis represents the hour of the day (0–23), and the y-axis represents the average delay in minutes. Peaks on the line indicate hours when delays were highest.")
+
+elif metric_selection == "Average Taxi Time (Hourly)":
+
+    st.info(" ****How to read this chart:** The x-axis shows the hours of the day (0–23), and the y-axis shows the average taxi time in minutes. Look for spikes to identify when taxi times were the longest.")
+
+elif metric_selection == "Flight Count by State":
+
+    st.info(" ***How to read this map:** Each state is color-coded based on the number of flights. Darker shades indicate higher flight counts. Use the navigation buttons to switch between years.")
+
+elif metric_selection == "Top Flight Routes by Count":
+
+    st.info(" ****How to read this treemap:** Each rectangle represents a flight route, and the size of the rectangle corresponds to the number of flights. Larger rectangles indicate busier routes.")
+
 st.markdown("---")
-st.info("📌 Select different metrics using the dropdown menu above to explore various trends.")
+st.info(" Select different metrics using the dropdown menu above to explore various trends.")
